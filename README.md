@@ -5,6 +5,6 @@ Este projeto está sendo desenvolvido por mim para ser o meu TCA (Trabalho de Co
 Ainda estou no inicio do projeto, portanto conforme ele for evoluindo também evoluirei a construção deste README
 
 ### Tecnologias
--Python
--Pandas
--Parquet
+-Python<br>
+-Pandas<br>
+-Parquet<br>
