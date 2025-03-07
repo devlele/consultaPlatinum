@@ -1,4 +1,3 @@
-import pandas as pd
 import functions
 
 if __name__ == "__main__":
