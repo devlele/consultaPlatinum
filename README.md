@@ -8,5 +8,6 @@ Obs: A base de dados presente neste repositório é totalmente ilustrativa, não
  
 ### Tecnologias
 -Python<br>
+-PySide6<br>
 -Pandas<br>
 -Parquet<br>
