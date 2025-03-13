@@ -3,6 +3,7 @@ from PySide6.QtGui import QCursor
 from PySide6.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QFrame, QTextEdit
 from PySide6.QtCore import Qt
 import functions
+import locale
 
 class App(QMainWindow):
     def __init__(self):
@@ -99,7 +100,12 @@ class App(QMainWindow):
         self.button_search.clicked.connect(self.search) #conexão do evento de clique do botão com a função de busca do CPF
         self.button_clear.clicked.connect(self.clear_results)
 
-    #
+    locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8') #Define o padrão númerico para o padrao do brasil
+    #Deixa o valor no padrão númerioco correto
+    def format_number(self, limit):
+        return locale.format_string('%.2f', limit, grouping=True)
+
+    #Função que faz a busca do cpf
     def search(self):
         cpf = self.input_cpf.text().strip()
         
@@ -115,9 +121,10 @@ class App(QMainWindow):
             old_number, new_number, old_limit, new_limit = result
             self.output_origem.setText(str(old_number))
             self.output_platinum.setText(str(new_number))
-            self.output_limit_ori.setText(str(old_limit))
-            self.output_limit_plat.setText(str(new_limit))
-            self.output_dif.setText(str(float(new_limit) - float(old_limit)))
+            self.output_limit_ori.setText(self.format_number(old_limit))
+            self.output_limit_plat.setText(self.format_number(new_limit))
+            dif = new_limit - old_limit
+            self.output_dif.setText(self.format_number(dif))
    
     #função para limpar a interace
     def clear_results(self):
