@@ -1,6 +1,4 @@
-import sys
-from PySide6.QtGui import QCursor
-from PySide6.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QFrame, QTextEdit
+from PySide6.QtWidgets import QMainWindow, QLabel, QLineEdit, QPushButton, QFrame, QTextEdit, QMessageBox
 from PySide6.QtCore import Qt
 import functions
 import locale
@@ -60,7 +58,6 @@ class App(QMainWindow):
         self.button_search.resize(175, 20)
         self.button_search.setCursor(Qt.PointingHandCursor)
         
-
         self.button_clear.setStyleSheet('background-color: #D3FF00; color: #000000; font-size: 16px; border-radius: 5px; text-align: center')
         self.button_clear.move(242, 62)
         self.button_clear.resize(175, 20)
@@ -110,8 +107,7 @@ class App(QMainWindow):
         cpf = self.input_cpf.text().strip()
         
         if not cpf.isdigit():
-            print("CPF inválido")
-            return
+            return QMessageBox.information(None, 'Erro','CPF inválido.')
 
         functions.read_df()
         result = functions.search_CPF(int(cpf)) #armazena o resultado da função de pesquisa do cpf
@@ -137,17 +133,3 @@ class App(QMainWindow):
 
         
     
-    
-
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    janela = App()
-    for widget in app.allWidgets():
-        if isinstance(widget, QTextEdit):
-            widget.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-            widget.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-            widget.setReadOnly(True)
-    
-    janela.show()
-    app.exec()
