@@ -1,13 +1,14 @@
-# Consulta da conta de origem 
-### Resumo
-Este projeto está sendo desenvolvido por mim para ser o meu TCA (Trabalho de Conclusão de Apredizado).
-É o primeiro projeto que desenvolvo sozinho e escolhi desenvolver em python para aprimorar os meus conhecimentos e habilidades com essa linguagem.
-Ainda estou no inicio do projeto, portanto conforme ele for evoluindo também evoluirei a construção deste README.
- 
-Obs: A base de dados presente neste repositório é totalmente ilustrativa, não contem dados reais de clientes, apenas números aleatórios
- 
-### Tecnologias
--Python<br>
--PySide6<br>
--Pandas<br>
--Parquet<br>
+# **Consulta VIP - Pesquisa da Conta de Origem**  
+A aplicação **Consulta VIP** foi desenvolvida para auxiliar operadores da central de relacionamento VIP. Através da pesquisa de um **CPF**, o operador pode obter informações como o número da conta antiga do cliente, o número da conta nova, além dos limites dessas contas e a diferença entre eles.  
+
+## Tecnologias  
+O desenvolvimento foi feito utilizando a linguagem **Python** e algumas de suas bibliotecas:  
+
+- **PySide6**: Utilizada para desenvolver a **interface gráfica do usuário (GUI)**.  
+- **Pandas**: Utilizada para a **manipulação da base de dados**.  
+
+## Base de Dados  
+Inicialmente, a base de dados é recebida em formato **Excel (.xlsx)**. Utilizamos um **conversor** para transformá-la em um arquivo **.parquet**. Dentro da aplicação, há uma função que utiliza a biblioteca **Pandas** para ler esse arquivo e convertê-lo em um **DataFrame**. Em seguida, manipulamos os dados para extrair e apresentar as informações necessárias.  
+
+## Autoria  
+Projeto desenvolvido por **Alefe Freitas**.  
