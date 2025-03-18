@@ -12,11 +12,12 @@ class App(QMainWindow):
 
         #Criação dos Widgets
         self.label_cpf = QLabel('Digite o CPF:', self)
-        self.label_origem = QLabel('Conta Origem', self)
+        self.label_origem = QLabel('Conta Classic', self)
         self.label_platinum = QLabel('Conta Platinum', self)
         self.label_limit_orig = QLabel('Limite', self)
         self.label_limit_plat = QLabel('Limite', self)
         self.label_dif = QLabel('Diferença entre limites', self)
+        self.label_percent = QLabel('Percentual de aumento', self)
         self.button_search = QPushButton('Pesquisar', self)
         self.button_clear = QPushButton('Limpar', self)
         self.input_cpf = QLineEdit(self)
@@ -25,6 +26,7 @@ class App(QMainWindow):
         self.output_limit_ori = QTextEdit(self)
         self.output_limit_plat = QTextEdit(self)
         self.output_dif = QTextEdit(self)
+        self.output_percent = QTextEdit(self)
         self.line = QFrame(self)
         
         
@@ -52,6 +54,10 @@ class App(QMainWindow):
         self.label_dif.setStyleSheet('color: white; font-size: 14px')
         self.label_dif.move(269, 215)
         self.label_dif.resize(140, 18)
+
+        self.label_percent.setStyleSheet('color: white; font-size: 14px')
+        self.label_percent.move(47, 215)
+        self.label_percent.resize(150, 18)
 
         self.button_search.setStyleSheet('background-color: #00C6CC; color: #ffffff; font-size: 16px; border-radius: 5px; text-align: center')
         self.button_search.move(47, 62)
@@ -85,7 +91,11 @@ class App(QMainWindow):
 
         self.output_dif.setStyleSheet('background-color: #D9D9D9; color: #000000; font-size: 14px; border-radius: 5px')
         self.output_dif.move(269, 236)
-        self.output_dif.resize(149, 20) 
+        self.output_dif.resize(149, 20)
+
+        self.output_percent.setStyleSheet('background-color: #D9D9D9; color: #000000; font-size: 14px; border-radius: 5px')
+        self.output_percent.move(47, 236)
+        self.output_percent.resize(207, 20) 
 
         #definição da linha que separa a interface
         self.line.setFrameShape(QFrame.HLine)
@@ -120,7 +130,9 @@ class App(QMainWindow):
             self.output_limit_ori.setText(self.format_number(old_limit))
             self.output_limit_plat.setText(self.format_number(new_limit))
             dif = new_limit - old_limit
+            percent = ((dif / old_limit) * 100)
             self.output_dif.setText(self.format_number(dif))
+            self.output_percent.setText(str(f'Aumento de {percent}% no limite'))
    
     #função para limpar a interace
     def clear_results(self):
@@ -130,6 +142,7 @@ class App(QMainWindow):
         self.output_limit_ori.clear()
         self.output_limit_plat.clear()
         self.output_dif.clear()
+        self.output_percent.clear()
 
         
     
