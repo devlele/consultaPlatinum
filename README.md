@@ -10,5 +10,18 @@ O desenvolvimento foi feito utilizando a linguagem **Python** e algumas de suas 
 ## Base de Dados  
 Inicialmente, a base de dados é recebida em formato **Excel (.xlsx)**. Utilizamos um **conversor** para transformá-la em um arquivo **.parquet**. Dentro da aplicação, há uma função que utiliza a biblioteca **Pandas** para ler esse arquivo e convertê-lo em um **DataFrame**. Em seguida, manipulamos os dados para extrair e apresentar as informações necessárias.  
 
+## Como Compilar
+
+### Pré-requisitos
+- Python 3.x instalado
+- Biblioteca `pyinstaller` (se ainda não tiver, instale com `pip install pyinstaller`)
+
+### Compilação
+Para gerar o executável, execute o seguinte comando no terminal:
+
+```sh
+pyinstaller --onefile --name ConsultaPlatinum main.py
+
+
 ## Autoria  
 Projeto desenvolvido por **Alefe Freitas**.  
