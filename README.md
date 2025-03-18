@@ -21,7 +21,7 @@ Para gerar o executável, execute o seguinte comando no terminal:
 
 ```sh
 pyinstaller --onefile --name ConsultaPlatinum main.py
-
+```
 
 ## Autoria  
 Projeto desenvolvido por **Alefe Freitas**.  
