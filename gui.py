@@ -105,6 +105,7 @@ class App(QMainWindow):
 
         #funcionalidade dos botões
         self.button_search.clicked.connect(self.search) #conexão do evento de clique do botão com a função de busca do CPF
+        self.input_cpf.returnPressed.connect(self.search)
         self.button_clear.clicked.connect(self.clear_results)
 
     locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8') #Define o padrão númerico para o padrao do brasil
@@ -132,7 +133,7 @@ class App(QMainWindow):
             dif = new_limit - old_limit
             percent = ((dif / old_limit) * 100)
             self.output_dif.setText(self.format_number(dif))
-            self.output_percent.setText(str(f'Aumento de {percent}% no limite'))
+            self.output_percent.setText(str(f'{percent:.0f}%'))
    
     #função para limpar a interace
     def clear_results(self):
