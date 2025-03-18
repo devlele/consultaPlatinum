@@ -1,0 +1,6 @@
+*.py linguist-detectable=true
+*.xlsx linguist-vendored
+*.parquet linguist-vendored
+*.spec linguist-vendored
+/build/* linguist-vendored
+/dist/* linguist-vendored
