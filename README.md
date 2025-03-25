@@ -8,7 +8,8 @@ O desenvolvimento foi feito utilizando a linguagem **Python** e algumas de suas 
 - **Pandas**: Utilizada para a **manipulação da base de dados**.  
 
 ## Base de Dados  
-Inicialmente, a base de dados é recebida em formato **Excel (.xlsx)**. Utilizamos um **conversor** para transformá-la em um arquivo **.parquet**. Dentro da aplicação, há uma função que utiliza a biblioteca **Pandas** para ler esse arquivo e convertê-lo em um **DataFrame**. Em seguida, manipulamos os dados para extrair e apresentar as informações necessárias.  
+Inicialmente, a base de dados é recebida em formato **Excel (.xlsx)**. Utilizamos um **conversor** para transformá-la em um arquivo **.parquet**. Dentro da aplicação, há uma função que utiliza a biblioteca **Pandas** para ler esse arquivo e convertê-lo em um **DataFrame**. Em seguida, manipulamos os dados para extrair e apresentar as informações necessárias. 
+Para a aplicação funcionar da forma correta o arquivo da base de dados deve estar salvo dentro da pasta como **UPSELL.parquet**.
 
 ## Como Compilar
 

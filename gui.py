@@ -125,10 +125,10 @@ class App(QMainWindow):
 
         #pega os resultados e aloca nos labals certo
         if result:
-            old_number, new_number, old_limit, new_limit = result
+            old_number, old_limit, new_number, new_limit = result
             self.output_origem.setText(str(old_number))
-            self.output_platinum.setText(str(new_number))
             self.output_limit_ori.setText(self.format_number(old_limit))
+            self.output_platinum.setText(str(new_number))
             self.output_limit_plat.setText(self.format_number(new_limit))
             dif = new_limit - old_limit
             percent = ((dif / old_limit) * 100)
