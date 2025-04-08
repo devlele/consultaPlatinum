@@ -12,7 +12,7 @@ Inicialmente, a base de dados é recebida em formato **Excel (.xlsx)**. Utilizam
 Para a aplicação funcionar da forma correta o arquivo da base de dados deve estar salvo dentro da pasta como **UPSELL.parquet**.
 
 ## Modelo da aplicação
-<img src="img/prototipo.png" alt="Protoripo final do projeto" width="400"/>
+<img src="img/prototipo.png" alt="Protoripo final do projeto" width="600"/>
 
 ## Como Compilar
 
